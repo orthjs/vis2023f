@@ -15,13 +15,13 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
         /* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap'); */
 
         @font-face {
-            font-family:'cjkFonts 全瀨體';
-            src: url(../../cjkFonts_allseto_v1.11.ttf); 
+            font-family: 'cjkFonts 全瀨體';
+            src: url(../../cjkFonts_allseto_v1.11.ttf);
         }
 
         h3 {
             background-color: rgba(255, 255, 0, 0.1);
-            color: white; 
+            color: white;
             text-shadow: 0 0 6px #FF0000, 0 0 6px #000000;
             font-family: 'cjkFonts 全瀨體', 'Noto Serif JP', serif;
             font-size: 18pt;
@@ -135,19 +135,47 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
         }
 
         @keyframes happy {
-            0% {transform: translateY(0px);}
-            25% {transform: translateY(-5px);}
-            50% {transform: translateY(0px);}
-            75% {transform: translateY(-5px);}
-            100% {transform: translateY(0px);}
+            0% {
+                transform: translateY(0px);
+            }
+
+            25% {
+                transform: translateY(-5px);
+            }
+
+            50% {
+                transform: translateY(0px);
+            }
+
+            75% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         @keyframes angry {
-            0% {transform: translate(1px, 3px);}
-            25% {transform: translate(7px, 2px);}
-            50% {transform: translate(4px, 5px);}
-            75% {transform: translate(12px, 3px);}
-            100% {transform: translate(2px, 0px);}
+            0% {
+                transform: translate(1px, 3px);
+            }
+
+            25% {
+                transform: translate(7px, 2px);
+            }
+
+            50% {
+                transform: translate(4px, 5px);
+            }
+
+            75% {
+                transform: translate(12px, 3px);
+            }
+
+            100% {
+                transform: translate(2px, 0px);
+            }
         }
     </style>
 </head>
@@ -165,7 +193,7 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
             .append("table")
             .append("tr")
             .selectAll("td")
-            .data([10,9,8,7,6,5,4,3,2,1,0])
+            .data([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0])
             .enter()
             .append("td")
             .text(function (d, i) {
@@ -174,13 +202,14 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
                 }
             })
             // img
-            .attr("class", function (d, i) { 
-                if (d == 10) return "excellent-kid"; 
-                else if (d >= 7 ) return "good-kid"; 
-                else if (d >= 2 ) return "fair-kid"; 
-                else return "poor-kid";})
+            .attr("class", function (d, i) {
+                if (d == 10) return "excellent-kid";
+                else if (d >= 7) return "good-kid";
+                else if (d >= 2) return "fair-kid";
+                else return "poor-kid";
+            })
             .append("img")
-            .attr("src", function (d, i) { 
+            .attr("src", function (d, i) {
                 if (d == 10) return "../pic/10.gif";
                 else if (d == 9) return "../pic/9.gif";
                 else if (d == 8) return "../pic/8.gif";
@@ -192,73 +221,75 @@ https://www.oxxostudio.tw/articles/201501/svg-d3-13-csv.html
                 else if (d == 2) return "../pic/2.gif";
                 else if (d == 1) return "../pic/1.gif";
                 else if (d == 0) return "../pic/0.gif";
-                else return "../pic/00.png"; })
+                else return "../pic/00.png";
+            })
             .attr("x", "0")
             .attr("y", "0")
-            .attr("width",  function(d, i) { return (i + 1) * 60; })
-            .attr("height", function(d, i) { return (i + 1) * 60; });
+            .attr("width", function (d, i) { return (i + 1) * 60; })
+            .attr("height", function (d, i) { return (i + 1) * 60; });
 
 
-    d3.text("../data.csv", function (data) {
+            d3.text("../data.csv").then(function (data) {
 
-        //var parsedCSV = d3.csv.parseRows(data);
-        parsedCSV = d3.csv.parseRows(data);
-        //console.log(parsedCSV);
+            //var parsedCSV = d3.csv.parseRows(data);
+            var parsedCSV = d3.csvParseRows(data);
+            //console.log(parsedCSV);
 
-        var container = d3.select("#div2")
-            .append("table")
-            .selectAll("tr")
-            .data(parsedCSV)
-            .enter()
-            .append("tr")
-            .selectAll("td")
-            .data(function (d) { return d; }).enter()
-            .append("td")
-            .html(function (d, i) {
-                if ( i == 4 && d != 'GitHub' ) {
-                    return '<a href="https://' + d + '.github.io/vis2023f/" target="_blank"><img src="https://thispersondoesnotexist.com/"></a>' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
-                }
-                else if ( i == 0 || i == 2 || isNaN(d)) {
-                    return d;
-                }
-            })
-            .filter(function (d, i) { return (i > 2 && !isNaN(d) && d != ""); })
-            .attr("class", function (d, i) { 
-                if (d == 10) return "excellent-kid"; 
-                else if (d >= 7 ) return "good-kid"; 
-                else if (d >= 2 ) return "fair-kid"; 
-                else return "poor-kid";})
-            .append("img")
-            .attr("src", function (d, i) {
-                if (d == 10) 
-                    return "../pic/10.gif";
-                else if (d == 9)
-                    return "../pic/9.gif";
-                else if (d == 8)
-                    return "../pic/8.gif";
-                else if (d == 7)
-                    return "../pic/7.gif";
-                else if (d == 6)
-                    return "../pic/6.gif";
-                else if (d == 5)
-                    return "../pic/5.gif";
-                else if (d == 4)
-                    return "../pic/4.gif";
-                else if (d == 3)
-                    return "../pic/3.gif";
-                else if (d == 2)
-                    return "../pic/2.gif";
-                else if (d == 1)
-                    return "../pic/1.gif";
-                else if (d == 0)
-                    return "../pic/0.gif";
-                else
-                    return "../pic/00.png";
-            })
-            .attr("width", 50)
-            .attr("height", 50)
-            ;
-    });
+            var container = d3.select("#div2")
+                .append("table")
+                .selectAll("tr")
+                .data(parsedCSV)
+                .enter()
+                .append("tr")
+                .selectAll("td")
+                .data(function (d) { return d; }).enter()
+                .append("td")
+                .html(function (d, i) {
+                    if (i == 4 && d != 'GitHub') {
+                        return '<a href="https://' + d + '.github.io/vis2023f/" target="_blank"><img src="https://thispersondoesnotexist.com/"></a>' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
+                    }
+                    else if (i == 0 || i == 2 || isNaN(d)) {
+                        return d;
+                    }
+                })
+                .filter(function (d, i) { return (i > 2 && !isNaN(d) && d != ""); })
+                .attr("class", function (d, i) {
+                    if (d == 10) return "excellent-kid";
+                    else if (d >= 7) return "good-kid";
+                    else if (d >= 2) return "fair-kid";
+                    else return "poor-kid";
+                })
+                .append("img")
+                .attr("src", function (d, i) {
+                    if (d == 10)
+                        return "../pic/10.gif";
+                    else if (d == 9)
+                        return "../pic/9.gif";
+                    else if (d == 8)
+                        return "../pic/8.gif";
+                    else if (d == 7)
+                        return "../pic/7.gif";
+                    else if (d == 6)
+                        return "../pic/6.gif";
+                    else if (d == 5)
+                        return "../pic/5.gif";
+                    else if (d == 4)
+                        return "../pic/4.gif";
+                    else if (d == 3)
+                        return "../pic/3.gif";
+                    else if (d == 2)
+                        return "../pic/2.gif";
+                    else if (d == 1)
+                        return "../pic/1.gif";
+                    else if (d == 0)
+                        return "../pic/0.gif";
+                    else
+                        return "../pic/00.png";
+                })
+                .attr("width", 50)
+                .attr("height", 50)
+                ;
+        });
     </script>
 </body>
 
