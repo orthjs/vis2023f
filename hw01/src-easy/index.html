@@ -34,11 +34,11 @@
     let student_id_4to6 = ['590', '598', 'C52', 'C53', 'C71'];
     let student_github_char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-    a3 = createArray(121, 1);
-    a3[0] = ['序號', '班級', '學號', '姓名', 'GitHub', '作業一', '作業二', '作業三', '作業四', '作業五', '作業六', '作業七', '作業八', '作業九', '作業十']
+    a3 = createArray(122, 1);
+    a3[1] = ['序號', '班級', '學號', '姓名', 'GitHub', '作業一', '作業二', '作業三', '作業四', '作業五', '作業六', '作業七', '作業八', '作業九', '作業十']
 
-    for (var i = 1; i < a3.length; i++) {
-        a3[i][0] = i;
+    for (var i = 2; i < a3.length; i++) {
+        a3[i][0] = i-1;
         a3[i][1] = student_class[Math.floor(Math.random() * 5)];
         a3[i][2] = generateUniqueID();
         a3[i][3] = String.fromCharCode(Math.floor(Math.random() * (0x9fff - 0x4e00 + 1) + 0x4e00)) +
@@ -46,7 +46,7 @@
             String.fromCharCode(Math.floor(Math.random() * (0x9fff - 0x4e00 + 1) + 0x4e00));
         a3[i][4] = generateUniqueRandomGithubNunber();
 
-        for (var j = 5; j < a3[0].length; j++) {
+        for (var j = 5; j < a3[1].length; j++) {
             a3[i][j] = Math.floor(Math.random() * 11);
         }
     }
@@ -85,10 +85,10 @@
         }
     }
 
-    let newRow = table.insertRow();
-    let newCell = newRow.insertCell();
-
-    newCell.colSpan = a3[0].length;
+    // let newRow = table.insertRow();
+    let Row = table.rows[0];
+    let newCell = Row.insertCell();
+    newCell.colSpan = 15;
     newCell.style.textAlign = 'right';
 
     let button = document.createElement('button');
@@ -106,7 +106,7 @@
 
         // Get each row data
         var rows = document.getElementsByTagName('tr');
-        for (var i = 0; i < rows.length; i++) {
+        for (var i = 1; i < rows.length; i++) {
 
             // Get each column data
             var cols = rows[i].querySelectorAll('td,th');
@@ -161,6 +161,13 @@
 </script>
 
 <style type="text/css">
+    @font-face {
+            font-family:'cjkFonts 全瀨體';
+            src: url(../../cjkFonts_allseto_v1.11.ttf); 
+        }
+    body {
+        font-family: 'cjkFonts 全瀨體', 'Noto Serif JP', serif;
+    }
     table,
     th,
     td {
