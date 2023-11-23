@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <style>
-        /* Add your styles here */
-    </style>
-</head>
+<meta charset="utf-8">
+<title>Untitled</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css">
 <body>
-    <h3>Data Visualization 成績</h3>
+<script type="module">
 
-    <div id="chart"></div>
+import define from "./index.js";
+import {Runtime, Library, Inspector} from "./runtime.js";
 
-    <script type="text/javascript" charset="utf-8">
-        
-    </script>
-</body>
-</html>
+const runtime = new Runtime();
+const main = runtime.module(define, Inspector.into(document.body));
+
+</script>
