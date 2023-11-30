@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Medium baseline(5pt)--滑鼠移動過去顯示該成員相關資訊(1pt)、滑鼠移動過去放大節點與圖片(2pt)、點擊節點可以展開或縮放(2pt)</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css">
+<body>
+<script type="module">
+
+import define from "./index.js";
+import {Runtime, Library, Inspector} from "./runtime.js";
+
+const runtime = new Runtime();
+const main = runtime.module(define, Inspector.into(document.body));
+
+</script>
