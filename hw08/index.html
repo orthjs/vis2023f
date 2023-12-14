@@ -178,14 +178,14 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">08</span>/src/ 檔案夾。
+      <a href="https://www.github.com/hengweibin/vis2023f/tree/main/hw08/src/">src</a>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      這一次的作業是觀察助教的影片與執行檔觀察可視化資料，但這種方式還真不好觀察，3D的球體很難去對準全局的指標，角度只要有傾斜，那樣看到的數據就會是錯的，看久了眼睛還會痠，不太喜歡以這種方式來呈現資料，但這種方式呈現資料好像可以結合一些遊戲的成分在裡面感覺蠻有趣的。
     </div>
   </div>
 
@@ -197,34 +197,158 @@
           <th>總分</th>
           <th>完成後打勾</th>
           <th>配分</th>
+          <th>等級</th>
           <th>分項描述</th>
         </tr>
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td rowspan="8" id="myTotal"></td>
+          <td>
+            <input
+              type="checkbox"
+              class="flipswitch"
+              id="myCheckbox1"
+              checked="checked"
+            />
+          </td>
+          <td id="m1">2</td>
+          <td>Simple baseline</td>
+          <td>(1)使用影片觀看有氧漫遊圖表回答問題</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td>
+            <input
+              type="checkbox"
+              class="flipswitch"
+              id="myCheckbox2"
+              checked="checked"
+            />
+          </td>
+          <td id="m2">2</td>
+          <td></td>
+          <td>(2)使用執行檔觀看主題遊圖表回答問題</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td>
+            <input
+              type="checkbox"
+              class="flipswitch"
+              id="myCheckbox3"
+              checked="checked"
+            />
+          </td>
+          <td id="m3">2</td>
+          <td>Medium baseline</td>
+          <td>(3)觀察有氧漫遊的資料回答問題</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              class="flipswitch"
+              id="myCheckbox4"
+              checked="checked"
+            />
+          </td>
+          <td id="m4">1</td>
+          <td></td>
+          <td>(4)觀察主題遊的資料集回答問題</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              class="flipswitch"
+              id="myCheckbox5"
+            />
+          </td>
+          <td id="m5">2</td>
+          <td>Strong baseline</td>
+          <td>(5)參考執行檔製作出自己的虛擬可視化圖表</td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              class="flipswitch"
+              id="myCheckbox6"
+            />
+          </td>
+          <td id="m6">1</td>
+          <td></td>
+          <td>(6)成功讀取主題遊資料並呈現</td>
         </tr>
       </table>
     </div>
   </div>
 
-  <!-- ------------------------------------------------>
+   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      <h4><u>Simple baseline</u></h4>
+      <h4><u>使用執行檔觀看有氧漫遊圖表回答問題(2pt)</u></h4>
+      <h5 style="color:cyan">
+        1. 回答數總計最高的是哪個問題哪個選項? (1pt)
+      </h5>
+      <h5>
+        Answer: 如果健康數據達標能兌換獎勵會提升我是用這個程式的意願的非常同意
+      </h5>
+
+      <h5 style="color:cyan">
+        2. 回答數總計最低的是哪個問題哪個選項? (1pt)
+      </h5>
+      <h5>
+        Answer: 如果健康數據達標能兌換獎勵會提升我是用這個程式的意願的非常不同意
+      </h5>
+      <h4><u>使用執行檔觀看主題遊圖表回答問題(2pt)</u></h4>
+      <h5 style="color:cyan">
+        1. 平均時間最快完成的組別是哪一組? (0.5pt)
+      </h5>
+      <h5>
+        Answer: 第14組
+      </h5>
+
+      <h5 style="color:cyan">
+        2. 平均時間最慢完成的組別是哪一組? (0.5pt)
+      </h5>
+      <h5>
+        Answer: 第11組
+      </h5>
+
+      <h5 style="color:cyan">
+        3. 你從圖表中觀察到什麼? (1pt)
+
+      </h5>
+      Answer: 透過不同的角度可以觀察出，大部分的組別坐落於哪裡，特別突出的組別也可以輕易地看出，幾乎所有組別都有破完任務。
+      <h5>
+      </h5>
+    </div>
+  </div>
+  <!-- ------------------------------------------------>
+  
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      <h4><u>Medium baseline</u></h4>
+      <h4><u>觀察有氧漫遊的資料回答問題(2pt)</u></h4>
+      <h5 style="color:cyan">
+        1. 經過你的觀察，表中的回覆總數大約落在多少?(1pt)
+      </h5>
+      <h5>
+        Answer: 200~300
+      </h5>
+      <h5 style="color:cyan">
+        2. 經過你的推斷，甚麼原因可能造成其與實際修課人數有落差?(1pt)
+      </h5>
+      <h5>
+        
+        Answer: App手機不支援，像是我就沒辦法用，但我還有同學可以借，要是剛好沒有認識的人可能就會有落差。
+      </h5>
+      <h4><u>使用執行檔觀看主題遊圖表回答問題(1pt)</u></h4>
+      <h5 style="color:cyan">
+        1. 根據資料集收集到的資料，你覺得還可以做成什麼樣的虛擬視覺化圖表?(1pt)
+      </h5>
+      <h5>
+        Answer: 可以用x-y軸然後以點點群聚或顏色的方式來顯示。
+      </h5>
     </div>
   </div>
 
@@ -265,6 +389,18 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
+    }
+
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
+    }
+
+    if (d3.select("#myCheckbox6").property("checked")){
+      score += parseInt(d3.select('#m6').html());   
     }
 
     d3.select("#myTotal").html(score);    
