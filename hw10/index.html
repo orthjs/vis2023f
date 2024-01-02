@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="zh-Hant-TW">
 <head>
@@ -171,105 +172,17 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h1>作業 10</h1>
+      <h1>作業 10 - 光影走廊</h1>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/vis2023f/hw<span style="color:red;">10</span>/src/ 檔案夾。
+      組員: 陳冠臻<hr>
+      轉眼間這堂課也快要結束了，這一次作業是利用師大美術館的光影走廊根據不同組別去把題目呈現出來，最後上課是再去一次師大美術館看每一組利用光影走廊呈現的作品，因為每一組的題目都不同，所以可以看到各種奇形怪狀的光影走廊，但是很有趣，這種利用周圍場地根據不同視角顯示內容的資料可視化非常的棒。
     </div>
   </div>
-
-  <!-- ------------------------------------------------>
-  <div class="row hw12">
-    <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
-    </div>
-  </div>
-
-  <!-- ------------------------------------------------>
-  <div class="row hw12">
-    <div class="col-md-12 twenty">
-      <table>
-        <tr>
-          <th>總分</th>
-          <th>完成後打勾</th>
-          <th>配分</th>
-          <th>分項描述</th>
-        </tr>
-        <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- ------------------------------------------------>
-  <div class="row hw12">
-    <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-  <!-- ------------------------------------------------>
-
-  <!-- ------------------------------------------------>
-
-
-<script>
-  $(function() {
-    var f = function() {
-      $(this).next().text($(this).is(':checked') ? '做完' : '未做完');
-    };
-    $('input').change(f).trigger('change');
-  });
-
-  d3.select("#myCheckbox1").on("change",update);
-  d3.select("#myCheckbox2").on("change",update);
-  d3.select("#myCheckbox3").on("change",update);
-  d3.select("#myCheckbox4").on("change",update);
-  d3.select("#myCheckbox5").on("change",update);
-  d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
-
-  update();
-  
-  function update(){
-
-    var score = 0;
-
-    if (d3.select("#myCheckbox1").property("checked")){
-      score += parseInt(d3.select('#m1').html());
-    }
-
-    if (d3.select("#myCheckbox2").property("checked")){
-      score += parseInt(d3.select('#m2').html());   
-    }
-
-    if (d3.select("#myCheckbox3").property("checked")){
-      score += parseInt(d3.select('#m3').html());   
-    }
-
-    d3.select("#myTotal").html(score);    
-  }
-</script>
 
 </body>
 </html>
